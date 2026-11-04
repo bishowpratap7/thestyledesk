@@ -2,7 +2,8 @@ name: The Style Desk Loop Scan
 
 # Self-perpetuating loop inside GitHub Actions: scans, sleeps, rescans for
 # ~5.5 hours, then dispatches its own successor. Hourly backup schedule is
-# only an emergency starter. Concurrency: one running, at most one queued.
+# only an emergency starter. Concurrency keeps one loop running,
+# with at most one successor queued.
 on:
   workflow_dispatch:
     inputs:
